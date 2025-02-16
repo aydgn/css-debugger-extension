@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "prebuild": "npx -y rimraf extension.zip css-debug.js",
+    "build": "npx -y uglifyjs app.js -o css-debug.js --compress",
+    "postbuild": "zip -r extension.zip icons/ manifest.json css-debug.js && echo 'Build and packaging complete!'"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.19.3"
+  }
+}
